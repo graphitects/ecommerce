@@ -15,8 +15,6 @@ type Product struct {
 	attr ProductAttributes
 
 	price float64
-
-	quantity uint64
 }
 
 func (p *Product) GetID() uuid.UUID {
@@ -27,14 +25,10 @@ func (p *Product) GetPrice() float64 {
 	return p.price
 }
 
-func (p *Product) GetQuantity() uint64 {
-	return p.quantity
-}
-
 func (p *Product) GetAttributes() ProductAttributes {
 	return p.attr
 }
 
-func NewProduct(id uuid.UUID, attr ProductAttributes, price float64, quantity uint64) Product {
-	return Product{id: id, attr: attr, price: price, quantity: quantity}
+func NewProduct(id uuid.UUID, attr ProductAttributes, price float64) Product {
+	return Product{id: id, attr: attr, price: price}
 }
